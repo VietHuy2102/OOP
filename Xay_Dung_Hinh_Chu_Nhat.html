@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng hình chữ nhật</title>
+</head>
+<body>
+<script>
+class Rectangle{
+    constructor(a,b) {
+        this.width = a;
+        this.hight = b;
+    }
+    Perimeter(){
+        return 2 * ( this.width + this.hight );
+    }
+    Area(){
+        return this.hight * this.width;
+    }
+}
+let result = new Rectangle(2,3)
+result.Perimeter();
+result.Area();
+console.log(result.Perimeter());
+console.log(result.Area())
+</script>
+</body>
+</html>

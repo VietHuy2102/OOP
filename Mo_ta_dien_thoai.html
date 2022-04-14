@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng mô tả điện thoại</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name) {
+            this.name = name;
+            this.pin = 100;
+            this.inbox = [];//hộp thư đến
+            this.outbox = [];// hộp thư đi
+            this.messgae = "";
+            this.status = false;
+        }
+
+        writeMessage(text) {
+            if (this.status === true) {
+                this.messgae = text;
+                this.pin--;
+            } else {
+                alert("điện thoại off")
+            }
+        }
+
+        turnon() {
+            this.status = true
+        };
+
+        turnoff() {
+            this.status = false
+        };
+
+        sendMessage(phone) {
+            this.outbox.push(this.messgae);// gửi tin nhắn thì sẽ lưu tin nhắn vào hộp thư đi của phone gửi đi
+            phone.inbox.push(this.messgae);// nhận chính tin nhắn đó ở hộp thư đến của phone
+        }
+    }
+
+    let samsung = new Mobile("samsung");
+    let iphone = new Mobile("iphone");
+    iphone.writeMessage("xin chào");
+    iphone.sendMessage(samsung);
+    samsung.writeMessage("hi bro");
+    samsung.sendMessage(iphone)
+    console.log(iphone.inbox)
+
+</script>
+</body>
+</html>

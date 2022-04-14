@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let person = {
+        name: ["Huy", "Uyên"],
+        age: 32,
+        gender: "Male",
+        interests: ["music" + "skiing"],
+        bio: function() {
+            alert(this.name[0] + " " + this.name[1] + "is" + this.age + "year old. He like" + this.interests[0] + "and" + this.interests[1]);
+        },
+        greeting: function() {
+            alert(" Hi! Im" + this.name[0] + ".");
+        }
+    };
+
+</script>
+</body>
+</html>
